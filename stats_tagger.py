@@ -1,50 +1,11 @@
 import re
+from utils import events, event_shortcuts, outcomes, outcome_shortcuts
 
-team1 = input("Enter team 1 name: ")
-team2 = input("Enter team 2 name: ")
-
-events = [
-    'start game',
-    'end half',
-    'start half',
-    'end game',
-    'shot',
-    'kickout',
-    'tackle',
-    'pass',
-    'foul'
-]
-
-event_shortcuts = {
-    'sg' : 'start game',
-    'eh' : 'end half',
-    'sh' : 'start half',
-    'eg' : 'end game',
-    's' : 'shot',
-    'ko' : 'kickout',
-    't' : 'tackle',
-    'p' : 'pass',
-    'f' : 'foul'
-}
+def get_teams():
+    team1 = input("Enter team 1 name: ")
+    team2 = input("Enter team 2 name: ")
 
 
-outcomes = {
-    'shot' : ['goal', 'point', '2 points', 'wide'],
-    'kickout' : ['won', 'lost'],
-    'tackle' : ['successful', 'incomplete'],
-    'pass' : ['complete', 'incomplete']
-}
-
-outcome_shortcuts = {
-    'g' : 'goal',
-    'p' : 'point',
-    '2p' : '2 points',
-    'w' : 'wide',
-    'c' : 'complete',
-    'i' : 'incomplete',
-    'won' : 'won',
-    'lost' : 'lost',
-}
 
 def get_event(event):
     # Used ChatGPT to help with function to match event shortcuts WITHIN text
