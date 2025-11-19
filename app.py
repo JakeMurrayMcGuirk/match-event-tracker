@@ -1,4 +1,5 @@
-from stats_tagger import commands, get_teams, get_event, get_outcome, get_player_no, parse_event, inputEvent
+from stats_tagger import get_teams, get_event, get_outcome, get_player_no, parse_event, inputEvent
+from utils import commands
 
 match_events = []
 
