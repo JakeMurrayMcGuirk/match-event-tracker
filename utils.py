@@ -1,5 +1,10 @@
 # File that contains all lists and dictionaries for events, event shortcuts and their possible outcomes (and respective shortcuts)
 
+commands = {
+    'help' : 'To enter an event please follow the following format: event outcome (if applicable) player no.(if applicable)\nIf outcome or number are not available then skip E.g. foul on player 14 = f14',
+    #'delete' : 'Deletes the most recently recorded event.'
+}
+
 events = [
     'start game',
     'end half',
