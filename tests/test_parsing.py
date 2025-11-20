@@ -57,9 +57,3 @@ def test_get_player_no():
     assert get_player_no("14") == "14"
     assert get_player_no("5") == "5"
     assert get_player_no("pofr65") == "65"
-
-# Call above functions
-test_parse_input()
-test_get_event()
-test_get_outcome()
-test_get_player_no()
