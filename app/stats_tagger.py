@@ -7,10 +7,10 @@ from app.utils import event_shortcuts, outcomes, outcome_shortcuts
 def get_event(event):
     '''Takes user input and gets the event code and event name from the input'''
     # Used ChatGPT to help with function to match event shortcuts WITHIN text
-    for e in event_shortcuts.items():
+    for e in event_shortcuts:
         if event.startswith(e):
             # Return the shortcut code, full event name, and remaining text
-            return e, event_shortcuts[e], event[len(e):]
+            return event_shortcuts[e], event[len(e):]
     return None, None, event
 
 def get_outcome(event, remaining_text):
@@ -54,7 +54,7 @@ def parse_event(event):
     # Get event code and format it to remove all whitespace and make lowercase
     event = event.strip().lower().replace(" ","")
     # Used Chat GPT to help generate the below 3 lines
-    event_code, event_name, remaining = get_event(event)
+    event_name, remaining = get_event(event)
     if event_name is None:
         return None
     
