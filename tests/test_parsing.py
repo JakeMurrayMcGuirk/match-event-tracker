@@ -54,9 +54,9 @@ def test_get_outcome():
 # Tests the get_player_no function in stats_tagger.py
 def test_get_player_no():
     assert get_player_no("69696969") == "69696969"
-    assert get_outcome("14") == "14"
-    assert get_outcome("5") == "5"
-    assert get_outcome("pofr65") == "65"
+    assert get_player_no("14") == "14"
+    assert get_player_no("5") == "5"
+    assert get_player_no("pofr65") == "65"
 
 # Call above functions
 test_parse_input()
