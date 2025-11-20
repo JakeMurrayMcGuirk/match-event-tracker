@@ -24,6 +24,9 @@ def get_event_rules(event_name):
 
 def validate_event(event_name, remaining_text, ruleset):
     '''Validates that user input is valid'''
+    # Check if event name is null
+    if event_name is None:
+        return None
     # If ruleset allows for outcome and player_no
     if ruleset['outcome'] and ruleset['player_no']:
         if remaining_text==None:
@@ -92,10 +95,9 @@ def parse_event(event):
     The leftover text after is fed into get_player_no to extract player no.
     All is returned to caller function.
     '''
-    # Used Chat GPT to help generate the below 3 lines
+    # Used Chat GPT to help generate the below line
     event_name, remaining = get_event(event)
-    if event_name is None:
-        return None
+
     # Get ruleset for event
     ruleset = get_event_rules(event_name)
 
@@ -108,8 +110,12 @@ def parse_event(event):
     # Get player no
     player_no = get_player_no(remaining)
 
-    # Return event, outcome and player number
+    # Final check that outcome_name is not null (except for time and foul events)
+    if ruleset['outcome'] and outcome_name==None:
+        return None
+    # Create list to store event
     output_event = [event_name, outcome_name, player_no]
+    # Return event to caller
     return output_event
 
 def input_event():
