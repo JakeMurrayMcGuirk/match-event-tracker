@@ -20,6 +20,10 @@ steps:
   displayName: 'Run pytest'
 
 - script: |
+    pytest --cov=app/tests/
+  displayName: 'Get pytest-cov coverage'
+
+- script: |
     pylint **/*.py
   displayName: 'Run pylint'
 
