@@ -25,9 +25,9 @@ def get_outcome(event, remaining_text):
     # Creates empty dict to store all possible shortcut values
     valid_shortcuts = {}
 
-    # Iterates through all shortcuts and their full name pairings in the outcome_shortcuts dictionary
+    # Iterates through all shortcut and full name pairings in the outcome_shortcuts dictionary
     for sc, full in outcome_shortcuts.items():
-        # If the full name is in the possible_full_outcomes list then append pairing to dictionary
+        # If full name is in possible_full_outcomes then append pairing to dictionary valid_shortcuts
         if full in possible_full_outcomes:
             valid_shortcuts[sc] = full
 
