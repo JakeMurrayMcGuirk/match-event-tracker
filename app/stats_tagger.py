@@ -14,6 +14,8 @@ def get_event(event):
 
 def get_event_rules(event_name):
     '''Get and return the ruleset for the input event'''
+    if e == None:
+        return None
     # Iterate through event_categories
     for e in event_categories:
         if event_name in event_categories[e]:
