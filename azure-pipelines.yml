@@ -20,7 +20,7 @@ steps:
   displayName: 'Run pytest'
 
 - script: |
-    pytest --cov=app/app/
+    pytest --cov=app
   displayName: 'Get pytest-cov coverage'
 
 - script: |
