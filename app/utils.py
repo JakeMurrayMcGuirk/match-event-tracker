@@ -76,7 +76,9 @@ param_rules = {
     'foul' : {
         'outcome' : False,
         'player_no' : True
-    }
+    },
+    # Handle null vals
+    None : None
 }
 
 outcomes = {
