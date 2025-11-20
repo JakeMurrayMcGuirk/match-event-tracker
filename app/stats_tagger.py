@@ -50,7 +50,13 @@ def get_player_no(remaining_text):
 
 
 def parse_event(event):
-    '''Takes input and calls the above functions to parse it into an full event (event, outcome, player no)'''
+    '''Take input and calls the above functions to parse it into an event
+    First it makes the input lowercase and removes all whitespace.
+    Then calls get_event to extract event_name from input
+    Remaining text is fed into get_outcome to extract the outcome
+    The leftover text after is fed into get_player_no to extract player no.
+    All is returned to caller function.
+    '''
     # Get event code and format it to remove all whitespace and make lowercase
     event = event.strip().lower().replace(" ","")
     # Used Chat GPT to help generate the below 3 lines
