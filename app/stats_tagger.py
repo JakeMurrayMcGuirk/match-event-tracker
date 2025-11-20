@@ -42,7 +42,7 @@ def get_outcome(event, remaining_text):
 def get_player_no(remaining_text):
     '''Extracts player number from an inputted string'''
     # Regex search to find a number if at end of string
-    player_no = re.search("\d+$", remaining_text)
+    player_no = re.search(r"\d+$", remaining_text)
     if player_no:
         player_no = player_no.group()
         return player_no
