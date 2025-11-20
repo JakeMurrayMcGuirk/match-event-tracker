@@ -80,6 +80,7 @@ def test_get_outcome():
     assert get_outcome("pass", "ofr65") == (None, "ofr65")
     assert get_outcome(None, "zk69") == (None, "zk69")
     assert get_outcome("shot", "f16") == (None, "f16")
+    assert get_outcome("shot", "16") == (None, "16")
 
 def test_get_player_no():
     '''Tests the get_player_no function in stats_tagger.py'''
@@ -89,6 +90,9 @@ def test_get_player_no():
     assert get_player_no("ofr65") == "65"
     assert get_player_no("zk69") == "69"
     assert get_player_no("player_five") is None
+    assert get_player_no(None) is None
+    assert get_player_no("n5n") is None
+    assert get_player_no("") is None
 
 def test_delete_event():
     '''Tests that delete_event is working correctly'''

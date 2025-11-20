@@ -83,6 +83,9 @@ def get_outcome(event, remaining_text):
 
 def get_player_no(remaining_text):
     '''Extracts player number from an inputted string'''
+    # If text is null return None
+    if remaining_text is None:
+        return None
     # Regex search to find a number if at end of string
     player_no = re.search(r"\d+$", remaining_text)
     if player_no:
