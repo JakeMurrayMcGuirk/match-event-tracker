@@ -42,6 +42,42 @@ event_shortcuts = {
     'f' : 'foul'
 }
 
+event_categories = {
+    'time' : ['begin game', 'end half', 'start half', 'end game'],
+    'play' : ['shot', 'kickout', 'tackle', 'pass'],
+    'foul' :  ['foul']
+}
+
+possible_params = {
+    'time' : 0,
+    'begin game' : 0,
+    'end half' : 0,
+    'start half' : 0,
+    'end game' : 0,
+    'shot' : 3,
+    'kickout' : 3,
+    'tackle' : 2,
+    'pass' : 2,
+    'foul' : 1
+}
+
+param_rules = {
+    # Default ruleset
+    'play' : {
+        'outcome' : True,
+        'player_no' : True
+    },
+    # Category rule for events in the time category
+    'time' : {
+        'outcome' : False,
+        'player_no' : False
+    },
+    # Rule for fouls
+    'foul' : {
+        'outcome' : False,
+        'player_no' : True
+    }
+}
 
 outcomes = {
     'shot' : ['goal', 'point', '2 points', 'wide'],
