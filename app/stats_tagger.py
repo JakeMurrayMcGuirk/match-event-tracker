@@ -11,7 +11,7 @@ def get_event(event):
         if event.startswith(e):
             # Return the shortcut code, full event name, and remaining text
             return event_shortcuts[e], event[len(e):]
-    return None, None, event
+    return None, event
 
 def get_outcome(event, remaining_text):
     '''Takes in a string and extracts the outcome'''

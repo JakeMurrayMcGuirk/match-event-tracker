@@ -42,11 +42,11 @@ def test_parse_input():
 def test_get_event():
     '''Tests the get_event function in stats_tagger.py'''
     # Chat GPT used to find errors with changing lists to tuples
-    assert get_event("sg69696969") == ("s", "shot", "g69696969")
-    assert get_event("f14") == ("f", "foul", "14")
-    assert get_event("sw5") == ("s", "shot", "w5")
-    assert get_event("pofr65") == ("p", "pass", "ofr65")
-    assert get_event("zk69") == (None, None, "zk69")
+    assert get_event("sg69696969") == ("shot", "g69696969")
+    assert get_event("f14") == ("foul", "14")
+    assert get_event("sw5") == ("shot", "w5")
+    assert get_event("pofr65") == ("pass", "ofr65")
+    assert get_event("zk69") == (None, "zk69")
 
 def test_get_outcome():
     '''Tests the get_outcome function in stats_tagger.py'''
