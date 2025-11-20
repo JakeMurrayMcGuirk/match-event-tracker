@@ -74,6 +74,12 @@ def parse_event(event):
     return [event_name, outcome_name, player_no]
 
 def input_event():
-    '''Takes event input from user'''
+    '''Takes event input from user
+    Removes all leading and trailing whitespace and lowercases it
+    '''
     e = input("Enter match event: ")
+    e = e.strip().lower()
     return e
+
+def print_event(event):
+    print(event)
