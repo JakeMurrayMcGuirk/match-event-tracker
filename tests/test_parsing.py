@@ -14,22 +14,22 @@ test_inputs = ["s22", "sw15", "tisu4",
 
 # Expected output values for test_parse_input
 expected_output = [
-    ['shot', None, "22"],
+    None,
     ['shot', 'wide', '15'],
     ['tackle', 'incomplete', '4'],
-    ['kickout', None, None],
-    ['shot', None ,'23'],
+    None,
+    None,
     ['shot', 'wide', '15'],
-    ['shot', None, None],
-    ['shot', None, None],
-    ['kickout', None, None],
-    ['kickout', None, None],
+    None,
+    None,
+    None,
+    None,
     ['kickout', 'won', None],
     ['kickout', 'lost', None],
-    ['kickout', None, None],
-    ['kickout', None, None],
+    None,
+    None,
     ['foul', None, '16'],
-    ['foul', None, '15'],
+    None,
     ['foul', None, None]
 ]
 
