@@ -18,3 +18,6 @@ while event.strip().lower()!="end game":
         else:
             print("Invalid event entered")
     event = inputEvent()
+
+# Once match is done
+print(match_events)

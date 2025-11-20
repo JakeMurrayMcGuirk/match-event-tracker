@@ -6,7 +6,7 @@ commands = {
 }
 
 events = [
-    'start game',
+    'begin game',
     'end half',
     'start half',
     'end game',
@@ -18,7 +18,7 @@ events = [
 ]
 
 event_shortcuts = {
-    'sg' : 'start game',
+    'bg' : 'begin game',
     'eh' : 'end half',
     'sh' : 'start half',
     'eg' : 'end game',
