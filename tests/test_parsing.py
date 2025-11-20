@@ -41,7 +41,22 @@ def test_parse_input():
 def test_get_event():
     assert get_event("sg69696969") == ("sg", "start game", "69696969") # Chat GPT used to find errors with changing lists to tuples
     assert get_event("f14") == ("f", "foul", "14")
+    assert get_event("sw5") == ("s", "shot", "w5")
+    assert get_event("pofr65") == (None, None, "pofr65")
 
+def test_get_outcome():
+    assert get_outcome("69696969") == (None, "69696969")
+    assert get_outcome("14") == (None, "14")
+    assert get_outcome("w5") == ("wide", "5")
+    assert get_outcome("pofr65") == (None, "pofr65")
+
+def test_get_player_no():
+    assert get_player_no("69696969") == "69696969"
+    assert get_outcome("14") == "14"
+    assert get_outcome("5") == "5"
+    assert get_outcome("pofr65") == "65"
 
 test_parse_input()
 test_get_event()
+test_get_outcome
+test_get_player_no
