@@ -1,7 +1,7 @@
 '''Tests for the functions in stats_tagger.py'''
 
 # Import functions to be tested from stats_tagger.py
-from app.stats_tagger import parse_event, get_event, get_outcome, get_player_no
+from app.stats_tagger import parse_event, get_event, get_event_rules, validate_event, get_outcome, get_player_no
 from app.utils import delete_event, show_help
 
 # Test input values for test_parse_input
@@ -48,6 +48,21 @@ def test_get_event():
     assert get_event("sw5") == ("shot", "w5")
     assert get_event("pofr65") == ("pass", "ofr65")
     assert get_event("zk69") == (None, "zk69")
+
+def test_get_event_rules():
+    '''Tests that the get_event_rules function is retrieving the correct rulesets'''
+    assert get_event_rules("shot", "g69696969") == {'outcome': True, 'player_no':True}
+    assert get_event_rules("foul", "14") == {'outcome':False, 'player_no':True}
+    assert get_event_rules("shot", "w5") == {'outcome': True, 'player_no':True}
+    assert get_event_rules("pass", "ofr65") == {'outcome':True, 'player_no':True}
+    assert get_event_rules(None, "zk69") == None
+
+def test_validate_event():
+    assert validate_event("shot", "g696969", {'outcome': True, 'player_no':True}) == True
+    assert validate_event("foul", "14", {'outcome':False, 'player_no':True}) == True
+    assert validate_event("shot", "w5", {'outcome': True, 'player_no':True}) == True
+    assert validate_event("pass", "ofr65", {'outcome':True, 'player_no':True}) == True
+    assert validate_event(None, "zk69", None) == False
 
 def test_get_outcome():
     '''Tests the get_outcome function in stats_tagger.py'''
