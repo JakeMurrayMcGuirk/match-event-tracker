@@ -1,4 +1,9 @@
-from app.stats_tagger import get_event, get_outcome, get_player_no, parse_event, inputEvent
+'''
+Calls the functions from stats_tagger.py and stores match events accordingly
+
+Prompts user for an input, calls parse_event (unless "end game" is input), and stores the output (if any) in a list (match_events)
+'''
+from app.stats_tagger import parse_event, inputEvent
 from app.utils import commands
 
 match_events = []
