@@ -4,6 +4,7 @@ def show_help():
     '''Displays format to enter events'''
     print('To enter an event please follow the following format: event outcome (if applicable) player no.(if applicable)\nE.g. foul by player 14 = f14\n\'delete\' removes the most recently input event')
 
+
 def delete_event(match_events):
     '''Deletes a specified event from the user'''
     if match_events:

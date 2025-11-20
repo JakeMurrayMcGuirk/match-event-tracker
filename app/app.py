@@ -17,7 +17,10 @@ event = input_event()
 while event!="end game" and event !="eg":
     event = event.strip().lower()
     if event in commands:
-        commands[event]()
+        if event=="delete":
+            commands[event](match_events)
+        else:
+            commands[event]
     else:
         attempt_parse = parse_event(event)
         if attempt_parse:
