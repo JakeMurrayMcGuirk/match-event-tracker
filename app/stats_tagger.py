@@ -14,7 +14,7 @@ def get_event(event):
 
 def get_event_rules(event_name):
     '''Get and return the ruleset for the input event'''
-    if event_name == None:
+    if event_name is None:
         return None
     # Iterate through event_categories
     for e in event_categories:
@@ -31,20 +31,20 @@ def validate_event(event_name, remaining_text, ruleset):
         return False
     # If ruleset allows for outcome and player_no
     if ruleset['outcome'] and ruleset['player_no']:
-        if remaining_text==None:
+        if remaining_text is None:
             return False
         # Use regex to check if remaining text is just a digit
-        elif (re.search(r"^\d+", remaining_text)):
+        if re.search(r"^\d+", remaining_text):
             return False
         else:
             return True
     # If ruleset only allows for player_no and no outcome (e.g. foul)
     if ruleset['outcome'] is False and ruleset['player_no']:
         # If there is remaining text and it is not a digit
-        if (re.search(r"^\d+", remaining_text)) is False and remaining_text!="":
+        if re.search(r"^\d+", remaining_text) is False and remaining_text!="":
             return False
         # If remaining text is blank or a number
-        elif remaining_text=="" or (re.search(r"^\d+", remaining_text)):
+        if remaining_text=="" or re.search(r"^\d+", remaining_text):
             return True
     if ruleset['outcome'] is False and ruleset['player_no'] is False:
         if remaining_text!=None:
