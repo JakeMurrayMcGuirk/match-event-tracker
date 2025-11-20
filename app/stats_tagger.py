@@ -71,7 +71,9 @@ def parse_event(event):
     player_no = get_player_no(remaining)
 
     # Return event, outcome and player number
-    return [event_name, outcome_name, player_no]
+    output_event = [event_name, outcome_name, player_no]
+    print_event(output_event)
+    return output_event
 
 def input_event():
     '''Takes event input from user
@@ -82,4 +84,5 @@ def input_event():
     return e
 
 def print_event(event):
+    '''Displays the event to console'''
     print(event)

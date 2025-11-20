@@ -22,7 +22,7 @@ while event!="end game" and event !="eg":
         attempt_parse = parse_event(event)
         if attempt_parse:
             match_events.append(attempt_parse)
-            print(attempt_parse)
+            print_event()
         else:
             print("Invalid event entered")
     event = input_event()
