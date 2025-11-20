@@ -1,7 +1,7 @@
 '''Functions that collect user inputs and parse them into events'''
 # Importing dependencies
 import re
-from app.utils import events, event_shortcuts, outcomes, outcome_shortcuts
+from app.utils import event_shortcuts, outcomes, outcome_shortcuts
 
 
 def get_event(event):
@@ -18,7 +18,7 @@ def get_outcome(event, remaining_text):
     # Checks if the event is in a list of possible outcomes
     if event not in outcomes:
         return None, remaining_text
-    
+
     # Get possible list of outcome shortcuts from list based on event
     possible_full_outcomes = outcomes[event]
 
