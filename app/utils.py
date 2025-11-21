@@ -10,8 +10,10 @@ def show_help():
 def delete_event(match_events):
     '''Deletes a specified event from the user'''
     if match_events:
-        match_events = match_events[:-1]
+        match_events = match_events[:-2]
+        print("Event deleted")
         return match_events
+    print("No events to delete")
     return 0
 
 commands = {

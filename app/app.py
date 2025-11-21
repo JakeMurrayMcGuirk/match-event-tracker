@@ -20,7 +20,7 @@ while event!="end game" and event !="eg":
     event = event.strip().lower()
     if event in commands:
         if event=="delete":
-            commands[event](match_events)
+            match_events = commands[event](match_events)
         else:
             commands[event]()
     else:
