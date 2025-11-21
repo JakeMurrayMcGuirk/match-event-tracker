@@ -103,6 +103,6 @@ def test_delete_event():
 
 def test_show_help():
     '''Ensures the show_help function is functioning correctly'''
-    assert show_help() == 'To enter an event please follow the following format:'
+    assert show_help() == ('To enter an event please follow the following format:'
     ' event outcome (if applicable) player no.(if applicable)'
-    '\nE.g. foul by player 14 = f14\n\'delete\' removes the most recently input event'
+    '\nE.g. foul by player 14 = f14\n\'delete\' removes the most recently input event')

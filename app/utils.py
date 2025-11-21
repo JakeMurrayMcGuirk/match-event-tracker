@@ -11,7 +11,7 @@ def show_help():
 def delete_event(match_events):
     '''Deletes a specified event from the user'''
     if match_events:
-        match_events = match_events[:-2]
+        match_events.pop()
         #print("Event deleted")
         return match_events
     #print("No events to delete")
