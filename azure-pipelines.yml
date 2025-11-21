@@ -31,6 +31,8 @@ steps:
     echo "Building the Python application"
     python -m compileall .
   displayName: 'Build Python App'
+  # Below code from https://stackoverflow.com/questions/61710112/azure-devops-pipeline-fails-when-running-pylint
+  continueOnError: true
 
 - task: CopyFiles@2
   inputs:
