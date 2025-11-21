@@ -23,9 +23,13 @@ def get_event_rules(event_name):
     for e in event_categories:
         if event_name in event_categories[e]:
             event_category = e
-    # Get ruleset from param_rules
-    ruleset = param_rules[event_category]
-    return ruleset
+    # Check if event_category was successful
+    if event_category:
+        # Get ruleset from param_rules
+        ruleset = param_rules[event_category]
+        return ruleset
+    # If no event_category, return None
+    return None
 
 def validate_event(event_name, remaining_text, ruleset):
     '''Validates that user input is valid'''
