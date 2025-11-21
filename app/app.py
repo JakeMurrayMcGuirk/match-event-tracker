@@ -22,7 +22,7 @@ while event!="end game" and event !="eg":
         if event=="delete":
             commands[event](match_events)
         else:
-            commands[event]
+            commands[event]()
     else:
         attempt_parse = parse_event(event)
         if attempt_parse is not None:
