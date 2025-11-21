@@ -99,7 +99,8 @@ def test_get_player_no():
 def test_delete_event():
     '''Tests that delete_event is working correctly'''
     assert delete_event([]) == 0
-    assert delete_event([["start game", None, None], ["shot", "goal", "15"], ["pass", "complete", None]]) == [["start game", None, None], ["shot", "goal", "15"]]
+    assert delete_event(([["start game", None, None], ["shot", "goal", "15"], ["pass", "complete", None]])
+                         == [["start game", None, None], ["shot", "goal", "15"]])
 
 def test_show_help():
     '''Ensures the show_help function is functioning correctly'''
