@@ -2,7 +2,8 @@
 
 def show_help():
     '''Displays format to enter events'''
-    help = 'To enter an event please follow the following format: event outcome (if applicable) player no.(if applicable)\nE.g. foul by player 14 = f14\n\'delete\' removes the most recently input event'
+    help = 'To enter an event please follow the following format: event outcome (if applicable) player no.(if applicable)' \
+    '\nE.g. foul by player 14 = f14\n\'delete\' removes the most recently input event'
     return help
 
 
